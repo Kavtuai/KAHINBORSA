@@ -1,0 +1,20 @@
+en:
+  time_format: "%Y-%m-%d %H:%M:%S %Z"
+  errors:
+    unauthorized: "Unauthorized. Supply a valid X-API-KEY header."
+    not_found: "Endpoint not found."
+    internal_server_error: "Internal server error."
+    rate_limit_exceeded: "Rate limit exceeded. Slow down and retry shortly."
+    invalid_amount: "Amount must be a positive number."
+    invalid_symbol: "Both from and to symbols are required."
+    conversion_not_available: "Conversion path is not available with the current market snapshot."
+tr:
+  time_format: "%d.%m.%Y %H:%M:%S %Z"
+  errors:
+    unauthorized: "Yetkisiz istek. Geçerli bir X-API-KEY başlığı gönderin."
+    not_found: "Uç nokta bulunamadı."
+    internal_server_error: "Sunucu içinde hata oluştu."
+    rate_limit_exceeded: "İstek limiti aşıldı. Kısa süre sonra tekrar deneyin."
+    invalid_amount: "Tutar pozitif bir sayı olmalıdır."
+    invalid_symbol: "Hem from hem de to sembolleri zorunludur."
+    conversion_not_available: "Mevcut piyasa anlık görüntüsüyle dönüşüm yapılamıyor."

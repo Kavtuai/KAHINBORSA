@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'securerandom'
+require 'time'
+require_relative '../config/database'
+
+name = (ARGV[0] || 'client').to_s.strip
+rate_limit = Integer(ARGV[1] || 30)
+cache_ttl_seconds = Integer(ARGV[2] || 10)
+
+abort 'name must not be empty' if name.empty?
+abort 'rate_limit must be positive' unless rate_limit.positive?
+abort 'cache_ttl_seconds must be positive' unless cache_ttl_seconds.positive?
+
+raw_key = "KAHINBORSA-#{SecureRandom.hex(20).upcase}"
+digest = DatabaseConfig.digest_api_key(raw_key)
+now = Time.now.utc
+
+DB[:api_users].insert(
+  name: name,
+  api_key_prefix: raw_key[0, 12],
+  api_key_hash: digest,
+  api_key: nil,
+  rate_limit: rate_limit,
+  cache_ttl_seconds: cache_ttl_seconds,
+  is_active: true,
+  created_at: now,
+  updated_at: now
+)
+
+puts "name=#{name}"
+puts "rate_limit=#{rate_limit}"
+puts "cache_ttl_seconds=#{cache_ttl_seconds}"
+puts "api_key=#{raw_key}"

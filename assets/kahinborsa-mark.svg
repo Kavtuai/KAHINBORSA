@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title desc">
+  <title id="title">KAHINBORSA</title>
+  <desc id="desc">KAHINBORSA market data gateway banner</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="320" rx="28" fill="url(#bg)"/>
+  <g opacity="0.18">
+    <path d="M60 250 C170 160, 250 220, 360 130 S560 80, 680 150 S860 260, 980 180 S1140 120, 1220 150" fill="none" stroke="url(#line)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M70 210 C180 120, 260 190, 370 100 S570 50, 690 120 S870 230, 990 150 S1150 90, 1210 120" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(84 76)">
+    <rect x="0" y="0" width="84" height="84" rx="18" fill="#111827" stroke="#1f2937"/>
+    <path d="M18 54 L34 38 L48 50 L66 28" fill="none" stroke="#22c55e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="18" cy="54" r="5" fill="#22c55e"/>
+    <circle cx="34" cy="38" r="5" fill="#60a5fa"/>
+    <circle cx="48" cy="50" r="5" fill="#f59e0b"/>
+    <circle cx="66" cy="28" r="5" fill="#22c55e"/>
+  </g>
+  <text x="196" y="126" fill="#f8fafc" font-size="62" font-weight="700" font-family="Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif">KAHINBORSA</text>
+  <text x="198" y="174" fill="#94a3b8" font-size="24" font-family="Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif">Production-focused market data gateway for crypto, FX and metals</text>
+  <g transform="translate(198 216)">
+    <rect x="0" y="0" width="160" height="42" rx="21" fill="#0b1220" stroke="#1e293b"/>
+    <text x="80" y="27" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="600" font-family="Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif">Ruby + Sinatra</text>
+    <rect x="176" y="0" width="126" height="42" rx="21" fill="#0b1220" stroke="#1e293b"/>
+    <text x="239" y="27" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="600" font-family="Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif">Sequel</text>
+    <rect x="318" y="0" width="136" height="42" rx="21" fill="#0b1220" stroke="#1e293b"/>
+    <text x="386" y="27" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="600" font-family="Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif">Multi-source</text>
+  </g>
+</svg>

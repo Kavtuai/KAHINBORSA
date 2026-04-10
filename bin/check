@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+
+PROJECT_ROOT = Pathname(__dir__).join('..').expand_path
+
+ruby_files = Dir.glob(PROJECT_ROOT.join('{api,config,lib}/**/*.rb').to_s)
+bin_files = Dir.glob(PROJECT_ROOT.join('bin/*').to_s).select { |path| File.file?(path) }
+files_to_check = (ruby_files + bin_files).uniq.sort
+
+failures = []
+
+files_to_check.each do |file|
+  success = system('ruby', '-c', file, out: File::NULL, err: File::NULL)
+  failures << file unless success
+end
+
+env_example = PROJECT_ROOT.join('.env.example')
+failures << env_example.to_s unless env_example.file?
+
+if failures.empty?
+  puts 'check=ok'
+  puts "files_checked=#{files_to_check.size}"
+  puts 'env_example=present'
+  exit 0
+end
+
+warn 'check=failed'
+failures.each { |entry| warn "failure=#{entry}" }
+exit 1
